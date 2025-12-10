@@ -43,7 +43,9 @@ jobs:
 
       # Lancer les tests
       - name: Run tests
-        run: pytest tests/
+        run: 
+            export PYTHONPATH=${{ github.workspace }}/src
+            pytest tests/
 
       # Mettre à jour le dataset et entraîner le modèle
       - name: Update dataset and train model
