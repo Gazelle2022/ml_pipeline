@@ -44,8 +44,7 @@ jobs:
       # Lancer les tests
       - name: Run tests
         run: 
-            export PYTHONPATH=${{ github.workspace }}/src
-            tests/
+            PYTHONPATH=/home/runner/work/ml_pipeline/ml_pipeline/src pytest tests/
 
       # Mettre à jour le dataset et entraîner le modèle
       - name: Update dataset and train model
